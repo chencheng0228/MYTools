@@ -275,9 +275,12 @@
        s = [str boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
     }
     else{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         //ios7以下使用。。
         s = [str sizeWithFont:font constrainedToSize:size lineBreakMode:NSLineBreakByWordWrapping];
     }
+#pragma clang diagnostic pop
     
       return s ;
 }
